@@ -7,7 +7,7 @@ const CONFIG = {
     celebrantName: "Alona",
     birthdayDate: "November 13, 2026",
     photoURL: "pics/alone.jpg",
-    musicURL: "bg/Happy Birthday Instrumental – Emotional Cinematic Piano Version.mp3",
+    musicURL: "bg/theme.mp3",
     
     password: "HAPPY",
     welcomeMessage: "This gift was made especially for you. Enter the secret password to continue.",
