@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="" type="audio/mpeg">
+    </audio>
+
+    <canvas id="night-sky"></canvas>
+
+    <div id="hint-modal" class="hidden">Hint goes here</div>
+
+    <div id="password-screen" class="screen">
+        <div class="password-container glass">
+            <h2>✨ A Special Surprise Awaits ✨</h2>
+            <p id="welcome-msg">This gift was made especially for you. Enter the secret password to continue.</p>
+            
+            <div class="input-group">
+                <input type="password" id="password-input" placeholder="Enter Password">
+                <i class="fas fa-eye eye-icon" id="toggle-pwd"></i>
+            </div>
+            
+            <button class="btn" onclick="checkPassword()">Unlock <i class="fas fa-lock-open"></i></button>
+            <br>
+            <button class="hint-btn" onclick="showHint()">Need a Hint?</button>
+        </div>
+    </div>
+
+    <div id="envelope-screen" class="screen hidden">
+        <div class="envelope-wrapper" id="envelope-btn" onclick="openEnvelope()">
+            <div class="envelope">
+                <div class="envelope-text">Tap to Open</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content">
+        
+        <section class="hero">
+            <div class="photo-frame">
+                <img id="hero-photo" src="https://via.placeholder.com/250" alt="Birthday Celebrant">
+            </div>
+            <h1 id="hero-name">Happy Birthday</h1>
+            <h3 id="hero-date">Date</h3>
+            <p id="hero-msg" class="glass" style="padding: 20px; margin-top: 20px;">May your special day be filled with happiness...</p>
+        </section>
+
+        <section class="cards-container" id="cards-container">
+            </section>
+
+        <section class="wish-section glass" style="padding: 40px; border-radius: 30px;">
+            <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 20px;">Make a Wish</h2>
+            <i class="fas fa-star wish-star" onclick="makeWish()"></i>
+            <div class="wish-message" id="wish-msg">Every star in the sky shines tonight to celebrate you.</div>
+        </section>
+
+    </div>
+
+    <div class="music-player glass hidden" id="music-controls">
+        <button class="music-btn" id="play-pause-btn" onclick="toggleMusic()"><i class="fas fa-play"></i></button>
+        <button class="music-btn" id="mute-btn" onclick="toggleMute()"><i class="fas fa-volume-up"></i></button>
+        <button class="music-btn" id="sfx-btn" onclick="toggleSfx()"><i class="fas fa-bell"></i></button>
+        <select id="sfx-select" class="sfx-select" aria-label="SFX selector">
+            <option value="calm-tap">Calm Tap</option>
+            <option value="soft-bell">Soft Bell</option>
+            <option value="warm-pop">Warm Pop</option>
+            <option value="gentle-pluck" selected>Gentle Pluck</option>
+        </select>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
